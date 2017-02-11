@@ -26,8 +26,8 @@
 		yuragiConut[i] = 0;
   }
   setInterval(function(){
-    for(var i = 0; i < 30; i++){
-      if(styleTop[i] < scroll + windowHeight + 30){
+    for(var i = 0; i < 60; i++){
+      if(styleTop[i] < scroll + screen.height + 30){
         if(yuragi[i] >= yuragiConut[i]){
           styleLeft[i] = styleLeft[i] + 0.5 + Math.random() * 0.5;
         }else{
