@@ -1,3 +1,8 @@
+<!--
+sakura is from
+https://codepen.io/actywav/pen/qEvaww
+-->
+
 <html>
     <head>
         <style>
@@ -8,15 +13,15 @@
                 /*height: 600px;*/
                 height: 100%;
 
-                /*background: linear-gradient(250deg, #b984c7, #7c509c);*/
-                /*background-size: 400% 400%;*/
+                background: linear-gradient(250deg, #b984c7, #7c509c);
+                background-size: 400% 400%;
 
-                /*-webkit-animation: bg 24s ease infinite;*/
-                /*-moz-animation: bg 24s ease infinite;*/
-                /*animation: bg 24s ease infinite;*/
+                -webkit-animation: bg 24s ease infinite;
+                -moz-animation: bg 24s ease infinite;
+                animation: bg 24s ease infinite;
             }
 
-            /*@-webkit-keyframes bg {
+            @-webkit-keyframes bg {
                 0%{background-position:0% 24%}
                 50%{background-position:100% 77%}
                 100%{background-position:0% 24%}
@@ -30,7 +35,7 @@
                 0%{background-position:0% 24%}
                 50%{background-position:100% 77%}
                 100%{background-position:0% 24%}
-            }*/
+            }
 
             canvas {
                 padding:0;
@@ -71,18 +76,14 @@
                 left: 0;
                 bottom: 0;
             }
-
-            #sakura {
-                width: 100%;
-                height: 100%;
-            }
         </style>
+
+        <link rel="stylesheet" href="./sakura.css">
     </head>
     <body>
         <ul id="scene">
-            <li class="layer" id="sakuraContainer" data-depth="0.00">
-                <!--<canvas id="sakura"></canvas>-->
-                <img id="sakura" src="./bg.png"></img>
+            <li class="layer" data-depth="0.00">
+                <canvas id="sakura"></canvas>
             </li>
             <li class="layer hanabi-layer" data-depth="0.50">
                 <a href="https://glua.team/">
@@ -93,27 +94,11 @@
 
         <!-- sakura shader -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/2.1.3/parallax.min.js"></script>
-        <script src="./rainyday.min.js"></script>
         <script>
-            var scene = document.getElementById("scene");
+            var scene = document.getElementById('scene');
             var parallax = new Parallax(scene);
             parallax.enable();
-
-            var engine = new RainyDay({
-                image: document.getElementById("sakura"),
-                parentElement: document.getElementById("sakuraContainer"),
-                blur: 6,
-                opacity: 0.9,
-                fps: 24, // EXTRA CINEMATIC
-            });
-
-            engine.rain(
-                [
-                    [1, 4, 10],
-                ],
-                100
-            );
         </script>
-        <!--<script src="./sakura.js"></script>-->
+        <script src="./sakura.js"></script>
     </body>
 </html>
